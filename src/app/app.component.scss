@@ -1,0 +1,55 @@
+myapp {
+  #cabecalho-menu .item-inner{
+    border: none;
+  }
+  .cabecalho-menu {
+    background-image: url("../assets/imgs/background.png");
+    height: 130px;
+    margin-bottom: 5px;
+
+    ion-avatar img {
+      width: 70px;
+      height: 70px;
+    }
+    h2 {
+      color: white;
+      font-weight: bold;
+    }
+
+    p {
+      color: #eee;
+    }
+
+
+  }
+  .logoAbsoluto{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+  }
+  .buscaGrande{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    width: 35px;
+    font-size: 30px;
+  }
+  .versao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .red{
+    color: red !important;
+  }
+  .scroll-content {
+    overflow-y: auto !important;
+  }
+  .botaoExit {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 30px;
+  }
+}

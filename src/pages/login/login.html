@@ -1,0 +1,67 @@
+<ion-content>
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Caldeira Mobile Versão Grátis
+    </div>
+    <div>
+      Suporte: 61 98160-5766 <a href="mail:contato@caldeirainformatica.com.br">contato@caldeirainformatica.com.br</a>
+    </div>
+  </div>
+  <div padding class="row">
+    <div class="col s12" ion-fixed>
+      <form padding [formGroup]="formulario" novalidate (ngSubmit)="efetuaLogin()">
+        <ion-item>
+          <ion-input autocapitalize="off"
+                     [(ngModel)]="formulario.servidor"
+                     [formControlName]="'servidor'"
+                     type="text"
+                     placeholder="Endereço do servidor de acesso"
+                     [clearInput]="false"
+                     [clearOnEdit]="true"
+                     aria-hidden="true"
+                     aria-label="Servidor"
+          ></ion-input>
+        </ion-item>
+        <h6 *ngIf="erroServidor" class="erro">Servidor de acesso é obrigatório</h6>
+        <ion-item>
+          <ion-input autocapitalize="off"
+                     [(ngModel)]="formulario.email"
+                     [formControlName]="'email'"
+                     type="text"
+                     placeholder="Digite seu e-mail"
+                     [clearInput]="false"
+                     aria-hidden="true"
+                     aria-label="email"
+                     [clearOnEdit]="true"
+                     value="admin@cpdsi.com.br">
+          </ion-input>
+        </ion-item>
+        <h6 *ngIf="erroEmail" class="erro">E-mail inválido ou inexistente.</h6>
+        <ion-item>
+          <ion-input [(ngModel)]="formulario.senha"
+                     [formControlName]="'senha'"
+                     placeholder="senha de acesso"
+                     [type]="typeSenha"
+                     [clearInput]="false"
+                     aria-label="senha"
+                     aria-hidden="true"
+                     [clearOnEdit]="true"
+                     value="Cpdsi3003*/">
+          
+          </ion-input>
+        </ion-item>
+        <h6 *ngIf="erroSenha" class="erro">É necessário preencher uma senha</h6>
+        <ion-item>
+          <ion-label>Exibir Senha</ion-label>
+          <ion-checkbox [(ngModel)]="exibeSenha"
+                        [ngModelOptions]="{standalone: true}"
+                        color="danger"
+                        (ionChange)="mudaInput()"></ion-checkbox>
+        </ion-item>
+        <button ion-button block round type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+</ion-content>
